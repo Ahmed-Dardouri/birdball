@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Security;
 using System.Xml.Serialization;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 public class PlayerController : MonoBehaviour, IPlayerController
     {
@@ -74,10 +75,26 @@ public class PlayerController : MonoBehaviour, IPlayerController
         public LayerMask groundLayer;
         public Transform groundCheckPoint;
 
+
+        
+        #region flap_declaration
+
+        public Transform leftWing;
+        public Transform rightWing;
+
+        public float flapSpeed = 10f;
+
         private MovementTracker _MovementTracker;
 
         private DashController _DashController;
         private JumpController _JumpController;
+
+        private Quaternion leftClosed;
+        private Quaternion leftOpen;
+        private Quaternion rightClosed;
+        private Quaternion rightOpen;
+        
+        #endregion
 
         private bool _applyGravityCheck;
 
@@ -108,6 +125,8 @@ public class PlayerController : MonoBehaviour, IPlayerController
             DashControllerInit();
             JumpControllerInit();
             MovementTrackerInit();
+
+            FlapInit();
         }
 
         private void DashControllerInit(){
@@ -138,6 +157,14 @@ public class PlayerController : MonoBehaviour, IPlayerController
             _MovementTracker.horizontalIsPressed_prevState = false;
             _MovementTracker.verticalIsPressed = false;
             _MovementTracker.verticalIsPressed_prevState = false;
+        }
+
+        private void FlapInit(){
+            leftClosed = leftWing.localRotation;
+            rightClosed = rightWing.localRotation;
+
+            leftOpen = Quaternion.Euler(0, 0, 0);
+            rightOpen = Quaternion.Euler(0, 0, 0);
         }
 
         #endregion
@@ -202,6 +229,79 @@ public class PlayerController : MonoBehaviour, IPlayerController
             _MovementTracker.verticalIsPressed_prevState = _MovementTracker.verticalIsPressed;
         }
 
+
+        #region Flap
+        
+        private System.Collections.IEnumerator FlapWings(){
+            float t = 0f;
+
+            // Open wings
+            while (t < 1f)
+            {
+                t += Time.deltaTime * flapSpeed;
+                leftWing.localRotation = Quaternion.Lerp(leftClosed, leftOpen, t);
+                rightWing.localRotation = Quaternion.Lerp(rightClosed, rightOpen, t);
+                yield return null;
+            }
+
+            t = 0f;
+
+            // Close wings
+            while (t < 1f)
+            {
+                t += Time.deltaTime * flapSpeed;
+                leftWing.localRotation = Quaternion.Lerp(leftOpen, leftClosed, t);
+                rightWing.localRotation = Quaternion.Lerp(rightOpen, rightClosed, t);
+                yield return null;
+            }
+        }
+
+        private System.Collections.IEnumerator FlapLeftWing(){
+            float t = 0f;
+
+            // Open wings
+            while (t < 1f)
+            {
+                t += Time.deltaTime * flapSpeed;
+                leftWing.localRotation = Quaternion.Lerp(leftClosed, leftOpen, t);
+                yield return null;
+            }
+
+            t = 0f;
+
+            // Close wings
+            while (t < 1f)
+            {
+                t += Time.deltaTime * flapSpeed;
+                leftWing.localRotation = Quaternion.Lerp(leftOpen, leftClosed, t);
+                yield return null;
+            }
+        }
+
+        private System.Collections.IEnumerator FlapRightWing(){
+            float t = 0f;
+
+            // Open wings
+            while (t < 1f)
+            {
+                t += Time.deltaTime * flapSpeed;
+                rightWing.localRotation = Quaternion.Lerp(rightClosed, rightOpen, t);
+                yield return null;
+            }
+
+            t = 0f;
+
+            // Close wings
+            while (t < 1f)
+            {
+                t += Time.deltaTime * flapSpeed;
+                rightWing.localRotation = Quaternion.Lerp(rightOpen, rightClosed, t);
+                yield return null;
+            }
+        }
+      
+        #endregion
+
         #region Dash
 
         private void CheckDashTask(){
@@ -218,6 +318,11 @@ public class PlayerController : MonoBehaviour, IPlayerController
                 }
                 // stop dash
                 StartCoroutine(StopDash());
+                if(_DashController.direction == Vector2.right){
+                    StartCoroutine(FlapLeftWing());
+                }else{
+                    StartCoroutine(FlapRightWing());
+                }
             }
             RunDash();
         }
@@ -307,13 +412,13 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
             if(_JumpController.canJump){
                 ExecuteJump();
+                StartCoroutine(FlapWings());
             }
             
             _JumpController.JumpToConsume = false;
-
-
         }
 
+  
         private void ExecuteJump()
         {
             _JumpController.EndedJumpEarly = false;

@@ -4,7 +4,7 @@ public class BonusOrb : MonoBehaviour
 {
     public enum BonusType { ScoreBoost_x3, ScoreBoost_x2, ScoreBoost_plus_3}
     public BonusType type;
-    public float duration = 10f; /* seconds */
+    public float duration = 20f; /* seconds */
     private BonusManager _BonusManager;
 
     void Start()
