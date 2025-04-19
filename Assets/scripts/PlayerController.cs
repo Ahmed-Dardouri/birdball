@@ -5,11 +5,7 @@ using System.Security;
 using System.Xml.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
-
-namespace prototype
-{
-
-    public class PlayerController : MonoBehaviour, IPlayerController
+public class PlayerController : MonoBehaviour, IPlayerController
     {
         public LayerMask PlayerLayer;
 
@@ -84,6 +80,10 @@ namespace prototype
         private JumpController _JumpController;
 
         private bool _applyGravityCheck;
+
+        public bool IsJumping(){
+            return !_grounded;
+        }
 
         #region Interface
 
@@ -410,4 +410,3 @@ namespace prototype
         public Vector2 FrameInput { get; }
     }
 
-}

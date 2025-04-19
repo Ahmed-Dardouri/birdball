@@ -40,8 +40,9 @@ public class logicManagerScript : MonoBehaviour
                 score = 1;
             }
             playerScore += score * score_multipler;
-            scoreText.text = "Score: " + playerScore.ToString();
         }
+        
+        UpdateScore();
     }
 
     public void SetScoreMultiplier(int mult){
@@ -77,6 +78,10 @@ public class logicManagerScript : MonoBehaviour
             PlayerPrefs.Save(); 
             UpdatePBUI(playerScore);
         }
+    }
+
+    private void UpdateScore(){
+        scoreText.text = "Score: " + playerScore.ToString();
     }
 
     private void UpdatePBUI(int score)
