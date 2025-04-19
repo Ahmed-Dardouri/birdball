@@ -8,8 +8,11 @@ public class logicManagerScript : MonoBehaviour
     public int playerScore;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI PBText;
+    public TextMeshProUGUI HitMultText;
     public GameObject gameOverScreen;
     private bool game_is_over;
+
+    private int score_multipler = 1;
     
     private const string PBKey = "PB";
 
@@ -27,19 +30,32 @@ public class logicManagerScript : MonoBehaviour
         if(game_is_over && Input.GetKeyDown(KeyCode.Space) == true){
             restartGame();
         }  
+
+        UpdateHitMultText();
     }
 
     public void addscore(int score){
-        Debug.Log(playerScore);
         if(game_is_over == false){
-            playerScore += score;
-            scoreText.text = playerScore.ToString();
+            if(score <= 0){
+                score = 1;
+            }
+            playerScore += score * score_multipler;
+            scoreText.text = "Score: " + playerScore.ToString();
         }
     }
+
+    public void SetScoreMultiplier(int mult){
+        if(mult <= 0){
+            mult = 1;
+        }
+        score_multipler = mult;
+    }
+
     public void restartGame(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
     }
+
     public void game_over(){
         game_is_over = true;
         gameOverScreen.SetActive(true);
@@ -68,6 +84,14 @@ public class logicManagerScript : MonoBehaviour
         if(PBText != null)
         {
             PBText.text = "Personal Best: " + score.ToString();
+        }
+    }
+    
+    private void UpdateHitMultText()
+    {
+        if(HitMultText != null)
+        {
+            HitMultText.text = "x" + score_multipler.ToString();
         }
     }
 }

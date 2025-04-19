@@ -8,6 +8,7 @@ TagManager:
   - ball
   - bird
   - ground
+  - BonusManager
   layers:
   - Default
   - TransparentFX
