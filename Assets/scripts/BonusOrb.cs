@@ -6,9 +6,11 @@ public class BonusOrb : MonoBehaviour
     public BonusType type;
     public float duration = 20f; /* seconds */
     private BonusManager _BonusManager;
+    private SoundManager soundManager;
 
     void Start()
     {
+        soundManager = GameObject.FindGameObjectWithTag("sound").GetComponent<SoundManager>();
         _BonusManager = GameObject.FindGameObjectWithTag("BonusManager").GetComponent<BonusManager>();
         
         // Self-destroy after 30 seconds if not collected
@@ -18,6 +20,7 @@ public class BonusOrb : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ball"))
         {
+            soundManager.PlaySFX(soundManager.bonusSound);
             Debug.Log("ball hit bonus : " + type);
             _BonusManager.ActivateBonus(type, duration);
             Destroy(gameObject);

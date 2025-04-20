@@ -11,6 +11,7 @@ TagManager:
   - BonusManager
   - main_canvas
   - Settings_canvas
+  - sound
   layers:
   - Default
   - TransparentFX

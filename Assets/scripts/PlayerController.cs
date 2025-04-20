@@ -80,6 +80,8 @@ public class PlayerController : MonoBehaviour, IPlayerController
         public InputActionReference moveAction;
 
         #endregion
+
+        private SoundManager soundManager;
         
         #region flap_declaration
 
@@ -121,6 +123,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
+            soundManager = GameObject.FindGameObjectWithTag("sound").GetComponent<SoundManager>();
 
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
 
@@ -310,7 +313,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
         private void CheckDashTask(){
             if(dashAction.action.WasPressedThisFrame() && _DashController.canDash && _DashController.cooldownPassed){
-
+                soundManager.PlaySFX(soundManager.dashSound);
                 _DashController.isDashing = true;
                 _DashController.canDash = false;  
                 _DashController.cooldownPassed = false;
@@ -417,6 +420,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
             if(_JumpController.canJump){
                 ExecuteJump();
                 StartCoroutine(FlapWings());
+                soundManager.PlaySFX(soundManager.jumpSound);
             }
             
             _JumpController.JumpToConsume = false;
