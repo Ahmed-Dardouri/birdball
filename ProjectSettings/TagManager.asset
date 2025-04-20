@@ -9,6 +9,8 @@ TagManager:
   - bird
   - ground
   - BonusManager
+  - main_canvas
+  - Settings_canvas
   layers:
   - Default
   - TransparentFX

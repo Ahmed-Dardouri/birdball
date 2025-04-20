@@ -1,6 +1,9 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
+
 public class PlayerController : MonoBehaviour, IPlayerController
     {
         public LayerMask PlayerLayer;
@@ -70,7 +73,13 @@ public class PlayerController : MonoBehaviour, IPlayerController
         public LayerMask groundLayer;
         public Transform groundCheckPoint;
 
+        #region input control
 
+        public InputActionReference jumpAction;
+        public InputActionReference dashAction;
+        public InputActionReference moveAction;
+
+        #endregion
         
         #region flap_declaration
 
@@ -177,9 +186,9 @@ public class PlayerController : MonoBehaviour, IPlayerController
         {
             _frameInput = new FrameInput
             {
-                JumpDown = Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.C),
-                JumpHeld = Input.GetButton("Jump") || Input.GetKey(KeyCode.C),
-                Move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))
+                JumpDown = jumpAction.action.WasPressedThisFrame(),
+                JumpHeld = jumpAction.action.IsPressed(),
+                Move = moveAction.action.ReadValue<Vector2>()
             };
 
 
@@ -300,7 +309,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
         #region Dash
 
         private void CheckDashTask(){
-            if(Input.GetKeyDown("e") && _DashController.canDash && _DashController.cooldownPassed){
+            if(dashAction.action.WasPressedThisFrame() && _DashController.canDash && _DashController.cooldownPassed){
 
                 _DashController.isDashing = true;
                 _DashController.canDash = false;  
