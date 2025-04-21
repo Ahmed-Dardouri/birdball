@@ -19,6 +19,7 @@ public class MenuMngr : MonoBehaviour
             }
         }
         SceneManager.LoadScene("birdball");
+        Time.timeScale = 1f;
         
     }
     public void Quitgame(){

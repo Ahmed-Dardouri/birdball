@@ -622,7 +622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &310490581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 479327380}
   - component: {fileID: 479327381}
   m_Layer: 0
-  m_Name: Hills_layer1_0
+  m_Name: Snow_layer1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -949,8 +949,8 @@ Transform:
   m_GameObject: {fileID: 479327378}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.864674, y: -17.83, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 54.864674, y: -16.07, z: 0}
+  m_LocalScale: {x: 0.74, y: 0.27, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545875320}
@@ -999,7 +999,7 @@ SpriteRenderer:
   m_SortingLayerID: -1840781121
   m_SortingLayer: -2
   m_SortingOrder: 13
-  m_Sprite: {fileID: 2788131931265365611, guid: a8eec98102a303345bfad8c66a0bbb54, type: 3}
+  m_Sprite: {fileID: 6957549810671651143, guid: a0dc29450e9ec4544adae32a576b4fee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1393,8 +1393,6 @@ MonoBehaviour:
   bonusSound: {fileID: 8300000, guid: e8d530ae8ff9b554b88f836b4567123e, type: 3}
   gameOverSound: {fileID: 8300000, guid: a6e28d7a059e70e42b1528f65eb9e8af, type: 3}
   bgMusic: {fileID: 8300000, guid: 3e250c0ef8fe2fd43b4701f2c6e940c0, type: 3}
-  musicVolume: 0.04
-  sfxVolume: 1
 --- !u!4 &702087518
 Transform:
   m_ObjectHideFlags: 0
@@ -2137,9 +2135,9 @@ Transform:
   m_GameObject: {fileID: 1110607601}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.440266, y: 15.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 54.18, y: 4.77, z: 0}
+  m_LocalScale: {x: 0.56, y: 0.56, z: 0.56}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 545875320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2187,12 +2185,12 @@ SpriteRenderer:
   m_SortingLayerID: -1840781121
   m_SortingLayer: -2
   m_SortingOrder: -119
-  m_Sprite: {fileID: 21300000, guid: 242147a69b938c54dafe48d4c5b1adb1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c67638a5f7e3c244eba6bbc2b9448888, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 51.2, y: 28.8}
+  m_Size: {x: 65.61, y: 12.237803}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2257,7 +2255,7 @@ GameObject:
   - component: {fileID: 1166564584}
   - component: {fileID: 1166564585}
   m_Layer: 0
-  m_Name: mountains_0
+  m_Name: mountains
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2272,8 +2270,8 @@ Transform:
   m_GameObject: {fileID: 1166564582}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.864674, y: -5.92, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 54.864674, y: -7.73, z: 0}
+  m_LocalScale: {x: 0.73, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545875320}
@@ -2322,7 +2320,7 @@ SpriteRenderer:
   m_SortingLayerID: -1840781121
   m_SortingLayer: -2
   m_SortingOrder: -244
-  m_Sprite: {fileID: 7099607018252260187, guid: 3f5aa8b5c5ec57642a6512245e6e16fe, type: 3}
+  m_Sprite: {fileID: -6329615864849440780, guid: 32a2ec8ba01118745914cbe2accfd8f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2906,7 +2904,7 @@ GameObject:
   - component: {fileID: 1254292737}
   - component: {fileID: 1254292738}
   m_Layer: 0
-  m_Name: Hills_layer0_0
+  m_Name: Snow_layer0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2921,8 +2919,8 @@ Transform:
   m_GameObject: {fileID: 1254292735}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.864674, y: -19.76, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 56.87, y: -17.44, z: 0}
+  m_LocalScale: {x: 0.84, y: 0.57, z: 0.57}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 545875320}
@@ -2971,7 +2969,7 @@ SpriteRenderer:
   m_SortingLayerID: -1840781121
   m_SortingLayer: -2
   m_SortingOrder: 9
-  m_Sprite: {fileID: 8914581706905933799, guid: 010acc01f33b79e4caccbd01861b1019, type: 3}
+  m_Sprite: {fileID: 3350869080885327079, guid: 1e5bae54d6497c34cb84dbb38c187c15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3064,7 +3062,7 @@ GameObject:
   - component: {fileID: 1294661167}
   - component: {fileID: 1294661168}
   m_Layer: 0
-  m_Name: trees_layer3_0
+  m_Name: trees_front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3079,9 +3077,9 @@ Transform:
   m_GameObject: {fileID: 1294661165}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.864674, y: -19.34, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 54.864674, y: -12.65, z: 0}
+  m_LocalScale: {x: 0.73, y: 0.73, z: 0.73}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 545875320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3129,7 +3127,7 @@ SpriteRenderer:
   m_SortingLayerID: -1840781121
   m_SortingLayer: -2
   m_SortingOrder: 12
-  m_Sprite: {fileID: -3981669694145591299, guid: 002f5bcd7d245b34eaf6a6ecddaa4b88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf63dd71220134c4c91d56b0af717897, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3992,7 +3990,7 @@ GameObject:
   - component: {fileID: 1833556591}
   - component: {fileID: 1833556592}
   m_Layer: 0
-  m_Name: GroundW1BG_0
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4007,9 +4005,9 @@ Transform:
   m_GameObject: {fileID: 1833556589}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.864674, y: -22.644415, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 54.864674, y: -16.39, z: 0}
+  m_LocalScale: {x: 0.29, y: 0.29, z: 0.29}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 545875320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4057,12 +4055,12 @@ SpriteRenderer:
   m_SortingLayerID: -1840781121
   m_SortingLayer: -2
   m_SortingOrder: 203
-  m_Sprite: {fileID: 3958672615944429072, guid: 6304a62d2c9d10f43923cea01f771f58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcbbe5c4b04912448b58aab4aa3bf357, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 51.2, y: 15}
+  m_Size: {x: 235.97083, y: 18.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4093,7 +4091,7 @@ GameObject:
   - component: {fileID: 2002290133}
   - component: {fileID: 2002290134}
   m_Layer: 0
-  m_Name: pine_0
+  m_Name: pine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4108,9 +4106,9 @@ Transform:
   m_GameObject: {fileID: 2002290131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.864674, y: -11.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 54.864674, y: -9.39, z: 0}
+  m_LocalScale: {x: 0.68, y: 0.68, z: 0.68}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 545875320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4158,7 +4156,7 @@ SpriteRenderer:
   m_SortingLayerID: -1840781121
   m_SortingLayer: -2
   m_SortingOrder: -42
-  m_Sprite: {fileID: 4863554413037471907, guid: e98d09575d2b42442b90527c6e6bf756, type: 3}
+  m_Sprite: {fileID: 7697723109437168217, guid: 359e97a99554d634eaffb8e32311fcdb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4501,7 +4499,7 @@ GameObject:
   - component: {fileID: 2129626184}
   - component: {fileID: 2129626185}
   m_Layer: 0
-  m_Name: trees_layer2_0
+  m_Name: trees_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4516,9 +4514,9 @@ Transform:
   m_GameObject: {fileID: 2129626182}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.864674, y: -14.63, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 54.864674, y: -9.67, z: 0}
+  m_LocalScale: {x: 0.76, y: 0.76, z: 0.76}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 545875320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4566,12 +4564,12 @@ SpriteRenderer:
   m_SortingLayerID: -1840781121
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5170551635384025165, guid: 137341fee6fbf054da35ab28fd474a1f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c867bc67c9e77443b6d17f50c4fdb38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 51.2, y: 25.36}
+  m_Size: {x: 53.329998, y: 14.348062}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

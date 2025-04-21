@@ -12,22 +12,19 @@ public class SoundManager : MonoBehaviour {
     public AudioClip bonusSound;
     public AudioClip gameOverSound;
     public AudioClip bgMusic;
-    
-    public float musicVolume = 1.0f;
-    public float sfxVolume = 1.0f;
+
+    private float musicVol;
+    private float sfxVol;
 
 
     void Awake() {
-        if (Instance == null) {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        } else {
-            Destroy(gameObject);
-        }
+        musicVol = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+        sfxVol = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
 
-        SetSFXVolume(sfxVolume);
-
-        musicSource.volume = musicVolume;
+        Debug.Log("soundmngr musicVol : " + musicVol);
+        Debug.Log("soundmngr sfxVol : " + sfxVol);
+        SetSFXVolume(sfxVol);
+        SetMusicVolume(musicVol);
         PlayMusic(bgMusic);
     }
 
@@ -37,17 +34,19 @@ public class SoundManager : MonoBehaviour {
         musicSource.Play();
     }
 
+    public void StopMusic() {
+        musicSource.Stop();
+    }
+
     public void PlaySFX(AudioClip clip) {
         sfxSource.PlayOneShot(clip);
     }
 
     public void SetMusicVolume(float volume) {
-        musicVolume = volume;
         musicSource.volume = volume;
     }
     
     public void SetSFXVolume(float volume) {
-        sfxVolume = volume;
         sfxSource.volume = volume;
     }
 

@@ -21,6 +21,7 @@ public class ball_hitbox_script : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.CompareTag("ground") && !game_over){
+            soundManager.StopMusic();
             soundManager.PlaySFX(soundManager.gameOverSound);
             Debug.Log("Game Over");
             game_over = true;

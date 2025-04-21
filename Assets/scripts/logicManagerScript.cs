@@ -26,6 +26,9 @@ public class logicManagerScript : MonoBehaviour
         /* read personal best score */
         int PB = PlayerPrefs.GetInt(PBKey, 0);
         UpdatePBUI(PB);
+        score_multipler = 1;
+        playerScore = 0;
+
     }
 
     void Update()
