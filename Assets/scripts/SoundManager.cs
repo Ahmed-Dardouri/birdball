@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour {
     public AudioClip ballBounceSound;
     public AudioClip ballHitSound;
     public AudioClip bonusSound;
+    public AudioClip gameOverSound;
     public AudioClip bgMusic;
     
     public float musicVolume = 1.0f;
@@ -17,8 +18,12 @@ public class SoundManager : MonoBehaviour {
 
 
     void Awake() {
-        if (Instance == null) Instance = this;
-        // DontDestroyOnLoad(gameObject);
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
 
         SetSFXVolume(sfxVolume);
 
