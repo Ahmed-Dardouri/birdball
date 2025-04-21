@@ -757,6 +757,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuCanvas: {fileID: 221808468}
   SettingsCanvas: {fileID: 1730467855}
+  control_settings:
+  - {fileID: 357274759}
+  - {fileID: 22068496}
 --- !u!1 &225365589
 GameObject:
   m_ObjectHideFlags: 0

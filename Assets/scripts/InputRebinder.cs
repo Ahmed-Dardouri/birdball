@@ -6,8 +6,8 @@ using TMPro;
 
 public class InputRebinder : MonoBehaviour
 {
-    public InputActionReference actionReference; // assign in Inspector
-    public int bindingIndex = 0; // Which binding (e.g. 0 = keyboard, 1 = gamepad)
+    public InputActionReference actionReference; 
+    public int bindingIndex = 0;
     public TextMeshProUGUI bindingText; // Text component to show current binding
 
     private InputActionRebindingExtensions.RebindingOperation rebindingOperation;
