@@ -16,6 +16,11 @@ public class BonusOrb : MonoBehaviour
         // Self-destroy after 30 seconds if not collected
         Destroy(gameObject, 30f);
     }
+
+    void Update()
+    {
+        transform.Rotate(0f, 0f, 30f * Time.deltaTime);
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("ball"))
